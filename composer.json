@@ -1,24 +1,45 @@
 {
-    "name": "par/par",
-    "autoload": {
-        "psr-4": {
-            "PAR\\First\\": "packages/first/src",
-            "PAR\\Second\\": "packages/second/src"
+    "name": "par/core",
+    "description": "Core structures and helpers",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alex Brouwer",
+            "email": "brouwer.alexander@gmail.com",
+            "role": "lead"
+        }
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4"
         }
     },
-    "replace": {
-        "par/first": "self.version",
-        "par/second": "self.version"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.0.x-dev"
+        }
     },
-    "description": "PHP Addition Repository (PAR)",
-    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PAR\\Core\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PARTest\\Core\\": "test/"
+        }
+    },
     "require": {
-        "php": "^7.4"
+        "php": "^7.4",
+        "php-ds/php-ds": "^1.2",
+        "ext-json": "*"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-master",
-        "symplify/monorepo-builder": "^7.2"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+        "phpunit/phpunit": "^9.0",
+        "roave/security-advisories": "dev-master"
+    }
 }
